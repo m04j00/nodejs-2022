@@ -18,7 +18,9 @@
   "homepage": "https://github.com/m04j00/node-js-2022#readme",
   "dependencies": {
     "body-parser": "^1.19.2",
+    "errorhandler": "^1.5.1",
     "expree": "^0.1.6",
+    "express-error-handler": "^1.1.0",
     "path": "^0.12.7"
   }
 }

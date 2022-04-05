@@ -1,3 +1,4 @@
+var expressErrorHandler = require('express-error-handler');
 var express = require('express');
 var http = require('http');
 var static = require('serve-static');
@@ -5,6 +6,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var app = express();
+
+var errorHandler = expressErrorHandler({
+    static:{
+        '404' : './public/404.html'
+    }
+});
+app.use(expressErrorHandler.httpError(404));
+app.use(errorHandler);
 
 app.set('port', process.env.PORT || 3000);
 
